@@ -6,8 +6,9 @@ public class Wizard extends Person {
     private int healPrice;
     private int attackPrice;
 
-    public Wizard(String name, int age) {
-        super(name, 80, 30, age, 5, 30, "Stick", 30);
+    public Wizard(String name, int x, int y) {
+        super(name, 80, 30, 60, 5, 30, "Stick", 30, 0, 0);
+        this.position = new Point2D(x, y);
         this.mana = 10;
         this.healPrice = 2;
         this.attackPrice = 1;
@@ -29,4 +30,12 @@ public class Wizard extends Person {
         else if (action == "attack") return attackPrice;
         return 0;
     } 
+    public String getTypeName() {
+        return "Маг";
+    }
+
+    @Override
+    public String toString() {
+        return getTypeName() + ": " + name + ": " + position;
+    }
 }

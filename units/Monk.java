@@ -4,8 +4,9 @@ public class Monk extends Person {
     private int mana;
     private int healVal;
     private int healPrice;
-    public Monk (String name, int age) {
-        super(name, 80, 30, age, 5, 30, "Stick", 30);
+    public Monk (String name, int x, int y) {
+        super(name, 80, 30, 30, 5, 30, "Stick", 30, 0, 0);
+        this.position = new Point2D(x, y);
     }
     public void heal(Person person, int val){
         person.health += this.healVal;
@@ -19,4 +20,13 @@ public class Monk extends Person {
         if (action == "heal") return healPrice;
         return 0;
     } 
+    public String getTypeName() {
+        return "Монах";
+    }
+
+    @Override
+    public String toString() {
+        return getTypeName() + ": " + name + ": " + position;
+    }
+
 }
