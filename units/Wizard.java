@@ -1,5 +1,7 @@
 package units;
 
+import behavior.Point2D;
+
 public class Wizard extends Person {
     private int mana;
     private int healVal;
@@ -7,7 +9,7 @@ public class Wizard extends Person {
     private int attackPrice;
 
     public Wizard(String name, int x, int y) {
-        super(name, 80, 30, 60, 5, 30, "Stick", 30, 0, 0);
+        super(name, 1, 80, 30, 60, 5, 30, "Stick", 30, 0, 0);
         this.position = new Point2D(x, y);
         this.mana = 10;
         this.healPrice = 2;

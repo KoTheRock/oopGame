@@ -6,18 +6,29 @@ public class Main {
 
     static ArrayList<Person> red = new ArrayList<>();
     static ArrayList<Person> blue = new ArrayList<>();
+    static ArrayList<Person> all = new ArrayList<>();
 
     public static void main(String[] args) {
         createTeam(red, 10, 0);
         createTeam(blue, 10, 3);
         System.out.println(red);
         System.out.println(blue);
+        System.out.println();
+        all.addAll(red);
+        all.addAll(blue);
+        all.sort(new PrioritySort());
 
-        Sniper sniper = new Sniper(getName(), 7, 5);
-        Person target = sniper.findNearestEnemy(blue);
-        System.out.println("Ближайшая цель это " + target);
+        for (Person p : all)
+        {
+            System.out.println(p + " ходит");
+            p.step();
+        }
         
 
+
+        // Sniper sniper = new Sniper(getName(), 7, 5);
+        // Person target = sniper.findNearestEnemy(blue);
+        // System.out.println("Ближайшая цель это " + target);
     }
     public static void createTeam(ArrayList<Person> team, int num, int start) 
     {

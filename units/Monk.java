@@ -1,11 +1,13 @@
 package units;
 
+import behavior.Point2D;
+
 public class Monk extends Person {
     private int mana;
     private int healVal;
     private int healPrice;
     public Monk (String name, int x, int y) {
-        super(name, 80, 30, 30, 5, 30, "Stick", 30, 0, 0);
+        super(name, 1, 80, 30, 30, 5, 30, "Stick", 30, 0, 0);
         this.position = new Point2D(x, y);
     }
     public void heal(Person person, int val){

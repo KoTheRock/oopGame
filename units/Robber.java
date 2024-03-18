@@ -1,8 +1,10 @@
 package units;
 
+import behavior.Point2D;
+
 public class Robber extends Person {
     public Robber(String name, int x, int y) {
-        super(name, 100, 10, 27, 20, 40, "knife", 50, 0, 0);
+        super(name, 2, 100, 10, 27, 20, 40, "knife", 50, 0, 0);
         this.position = new Point2D(x, y);
     }
     public void attack(Person person) {

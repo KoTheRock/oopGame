@@ -1,8 +1,10 @@
 package units;
 
+import behavior.Point2D;
+
 public class Pikeman extends Person {
     public Pikeman(String name, int x, int y) {
-        super(name, 80, 30, 35, 30, 50, "Spire", 20, 0, 0);
+        super(name, 2, 80, 30, 35, 30, 50, "Spire", 20, 0, 0);
         this.position = new Point2D(x, y);
     }
     public void attack(Person person) {
@@ -16,4 +18,5 @@ public class Pikeman extends Person {
     public String toString() {
         return getTypeName() + ": " + name + ": " + position;
     }
+
 }
