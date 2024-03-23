@@ -1,6 +1,9 @@
 package behavior;
 
-public interface ActionInterface {
+import person.PersonBase;
 
-    void step();
+import java.util.ArrayList;
+
+public interface ActionInterface {
+    void step(ArrayList<PersonBase> enemies, ArrayList<PersonBase> friends);
 }
