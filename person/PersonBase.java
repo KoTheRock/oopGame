@@ -19,7 +19,8 @@ public abstract class PersonBase implements ActionInterface {
     protected final int power;              
     protected final int agility;            
     protected final int defence;           
-    protected int distance;               
+    protected int distance;
+    protected String history;
 
     protected CoordXY position;            
 
@@ -34,6 +35,7 @@ public abstract class PersonBase implements ActionInterface {
         this.defence = defence;
         this.distance = distance;
         this.position = pos;
+        this.history = "";
     }
 
     protected int getRound(int origin, int percent)
@@ -56,6 +58,15 @@ public abstract class PersonBase implements ActionInterface {
         return position;
     }
 
+    public int[] getCoords()
+    {
+        return new int[] {position.getY(), position.getX()};
+    }
+
+    public int getHealth()
+    {
+        return health;
+    }
 
     public void healed(int health)
     {

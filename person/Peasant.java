@@ -25,8 +25,13 @@ public class Peasant extends PersonBase{
     }
 
     @Override
+    public String getInfo() {
+       return "Крестьянин";
+    }
+
+    @Override
     public String toString() {
-        return String.format("[Крестьянин] %s", name  + " " + position.toString());
+        return String.format("[Крестьянин] %s, ❤️=%d, \uD83C\uDFF9=%d, %s", name, health, bag, position.toString());
     }
 
 }

@@ -26,4 +26,8 @@ public class Sniper extends ShooterBase {
         return String.format("[Снайпер] %s", name  + " " + position.toString());
     }
 
+    @Override
+    public String getInfo() {
+       return "Снайпер";
+    }
 }

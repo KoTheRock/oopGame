@@ -20,7 +20,7 @@ public abstract class ShooterBase extends PersonBase {
 
     protected void shot(PersonBase target)
     {
-        System.out.print(" Стреляет по " + target);
+//        System.out.print(" Стреляет по " + target);
         ammo--;
         float dist = position.distanceTo(target.position);
         int damage = getRound(power, 10) + (power / 10) * level;
@@ -35,15 +35,7 @@ public abstract class ShooterBase extends PersonBase {
             damage *= 2.0f;
         }
         int res = target.getDamage(damage);
-        if (res > 0)
-        {
-            if (critical)
-                System.out.print(" и наносит критический удар в " + res + " повреждений!");
-            else
-                System.out.print(" и наносит " + res + " повреждений.");
-        } else {
-            System.out.print(", но " + target.name + " увернулся!");
-        }
+        history = history + name + " стреляет в " + target.name + " наносит " + res + " урона";
         if (target.health <= 0)
         {
             System.out.print("\n" + target + "F");
@@ -54,11 +46,14 @@ public abstract class ShooterBase extends PersonBase {
     @Override
     public void step(ArrayList<PersonBase> enemies, ArrayList<PersonBase> friends)
     {
+
+        System.out.println(history);
+        history = "";
         if (health <= 0 || ammo <= 0)
         {
             if (ammo <= 0)
             {
-                System.out.print(name + ": " + "нужны стрелы!");
+                System.out.print(name + ": " + "нужны стрелы! ");
             }
             return;
         }
@@ -67,6 +62,7 @@ public abstract class ShooterBase extends PersonBase {
         {
             shot(target);
         }
+
     }
 
 }
